@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Profile detail
+{% endblock title%}
+
+{% block content %}
+
+{% for question in questions %}
+    <h1> {{question}} </h1>
+{% endfor %}
+{% endblock content %}

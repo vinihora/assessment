@@ -1,0 +1,29 @@
+{% extends 'base.html ' %}
+
+{% block content %}
+<div class="column">
+    <div class="row">
+        <h1 class="mt-60">Bem-vindo, {{profile.user.username}}</h1>
+        <img src="{{teams.0.company.logo.url}}" class="company-logo mt-30">
+    </div>
+</div>
+<div class="row">
+    <div class="column solid-contorn">
+        <h1>Avaliações</h1>
+        {% for team in teams %}
+            <h2>{{ team.team }}</h2>
+            {% for obj in team.avaliations.all %}
+                <div class="row">
+                    <h3>{{obj}}</h3>
+                    <a href="" class="column-2"><h3>Editar</h3></a>
+                    <a href="" class="column-2"><h3>Resultados</h3></a>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    <br>
+    <div class="column solid-contorn">
+        <h1>Próximos eventos</h1>
+    </div>
+</div>
+{% endblock content %}
