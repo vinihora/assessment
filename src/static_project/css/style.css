@@ -60,19 +60,20 @@ body {
   }
   
 .column {
-    flex: 50%;
+    flex: 100%;
 }
 
 .column-2 {
-    width: 50px;
-    margin-left: 40px;
+    width: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .solid-contorn {
     border-radius: 25px;
     border: 2px solid #000;
     padding: 50px;
-    margin-top: 10%;
+    margin-top: 6%;
     margin-left: 1%;
     margin-right: 2%;
 }
@@ -80,5 +81,10 @@ body {
 .company-logo {
     margin-left: 450px;
     border-radius: 25px;
-    border: 2px solid #000;
+    border: 0.3px solid #000;
+    width: 8%
+}
+
+select.myselect{
+    overflow:auto;
 }

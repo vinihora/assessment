@@ -61,8 +61,12 @@ class Teams(models.Model):
         return self.team
 
 class Choice(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, default=None)
-    choiced = models.ForeignKey(Answers, related_name='choiced', on_delete=models.CASCADE, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    choiced = models.CharField(max_length=300)
     #choiced = models.CharField(max_length=50, blank=True)
     quest = models.ForeignKey(Question, related_name='quest', on_delete=models.CASCADE, blank=True)
+    assess = models.ForeignKey(Avaliation, related_name='assessment', on_delete=models.CASCADE, blank=True)
     #quest = models.CharField(max_length=300, blank=True)
+
+    def __str__(self):
+        return f"{self.user.username}-{self.quest.id}-{self.assess}"

@@ -1,0 +1,21 @@
+{% extends 'base.html ' %}
+
+{% block content %}
+
+<h1>{{assess}}</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {% for obj in assess.category.all %}
+        {% for i in obj.questions.all%}
+            <h2>{{ i.question }}</h2>
+            <br>
+            {% for choice in obj.choices.all %}
+                <input type="radio" name="{{i.id}}" id="{{forloop.counter}}" value="{{ choice.id }}" />
+                <label for="choice{{ forloop.counter }}">{{ choice }}</label><br />
+            {% endfor %}
+        {% endfor %}
+    {% endfor %}
+    <button type="submit" class="mt-30">Send</button>
+</form>
+<br>
+{% endblock content %}

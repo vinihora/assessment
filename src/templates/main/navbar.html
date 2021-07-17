@@ -4,7 +4,7 @@
           <h3>ACE</h3>
       </a>
       {% if request.user.is_authenticated %}
-      <a href="" class="item">
+      <a href="{% url 'profiles:myprofile-view' %}" class="item">
           Home
       </a>
       {% endif %}
